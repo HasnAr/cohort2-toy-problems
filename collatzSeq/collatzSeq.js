@@ -14,36 +14,36 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 */
 
-
+//iterate over 
 var longestCollatzSeq = function(){
-	this.dictionary=[];
-	this.i=0;
+	dictionary=[];
 	var n = 999999;
 	while(n>0){
-		this.i=0
-		this.dictionary.push(this.recur.call(n))
+		dictionary.push(recur(n))
 		n--;
 	}
-	return this.dictionary.max();
+	return dictionary.max();
 }
 
-
-longestCollatzSeq.prototype.recur = function(startingPoint){
+//calculating sequence for positive integer
+function recur(startingPoint, counter=1){
 
 	if(startingPoint >1){
 		if(startingPoint%2 === 0){
 			//calling the function recursivly to startingPoint/2
-			longestCollatzSeq(startingPoint/2);
-			this.i++
+			counter++
+			return recur(startingPoint/2, counter);
+			
 		}
 		//other way check if startingPoint is odd 
 		 else{
 			//calling the function recursivly to 3*startingPoint+1
-			return longestCollatzSeq(3*startingPoint+1)
-			this.i++
+			counter++
+			return recur(3*startingPoint+1, counter)
+			
 
 			}
 		} else{
-			return i;
+			return counter;
 		}
 }
