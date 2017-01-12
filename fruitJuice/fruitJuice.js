@@ -25,19 +25,19 @@ function Jar() {
   //fruits container
   this.fruits = {};
 }
-
+//o(1)
 //adding fruit to fruits fruit name as a key and amount as value
 Jar.prototype.add = function(amount, fruit){
 	this.fruits[fruit] = amount;
 }
 
-
+//o(n)
 //retrive fruits amount return summation of them
 Jar.prototype.getTotalAmount = function(){
 	return Object.values(this.fruits).reduce(function(a,b){ return a+b},0);
 }
 
-
+o(1)
 //devide fruit amount on total amount to return percantage
 Jar.prototype.getConcentration= function(fruit){
 	return (!this.fruits[fruit])?  0: this.fruits[fruit]/ this.getTotalAmount(); 
