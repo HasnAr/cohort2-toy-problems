@@ -12,7 +12,7 @@ Now you add 200 units of apple juice
 And then you add 200 units of banana juice
 Now the concentration of apple juice is 0.5 (50%)
 Then you pour out 200 units 100 100
-The concentration of apple juice is still 50%
+The concentration of apple juice is still 50%J
 Then you add 200 units of apple juice again
 Now the concentration of apple juice is 0.75, while the concentration
 of banana juice is only 0.25 (300 units apple juice + 100 units banana juice)
@@ -22,7 +22,27 @@ Complete the functions in order to provide this functionality.
 
 function Jar() {
   // TODO
+  //fruits container
+  this.fruits = {};
 }
+
+//adding fruit to fruits fruit name as a key and amount as value
+Jar.prototype.add = function(amount, fruit){
+	this.fruits[fruit] = amount;
+}
+
+
+//retrive fruits amount return summation of them
+Jar.prototype.getTotalAmount = function(){
+	return Object.values(this.fruits).reduce(function(a,b){ return a+b},0);
+}
+
+
+//devide fruit amount on total amount to return percantage
+Jar.prototype.getConcentration= function(fruit){
+	return (!this.fruits[fruit])?  0: this.fruits[fruit]/ this.getTotalAmount(); 
+}
+
 
 /*
 These are some tests:
