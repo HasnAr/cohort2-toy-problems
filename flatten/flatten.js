@@ -15,6 +15,10 @@ function flatten(){
 	//O(n)
 	//semi colon as regular expression
 	var x= /\,/gi
+	// for(var key in arguments)
+	// 	if(arguments[key] === null)
+	// 		arguments[key] = 'true&false'
+	// console.log(Array.from(arguments));
 	//transfer arguments object into array join and replace all semi-colon and split it again into array
 	return Array.from(arguments).join("").replace(x,'').split("");
 	
