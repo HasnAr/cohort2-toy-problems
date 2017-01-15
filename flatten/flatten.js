@@ -11,7 +11,14 @@ flatten(1, [2, 3], 4, 5, [6, [7]]) // returns [1, 2, 3, 4, 5, 6, 7]
 flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 4, 'c']
 
 */
-
 function flatten(){
+	// var x= /\,/gi
+	// return Array.from(arguments).join("").replace(x,'').split("");
+	var x= /\,\"\]\[/gi
+	console.log(arguments)
+var temp= Array.from(arguments);
+		console.log(temp)
+				console.log(JSON.stringify(temp))
 
+	return JSON.stringify(temp).rplace(x,'').split("");
 }
