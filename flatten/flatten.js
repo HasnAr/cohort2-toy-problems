@@ -12,13 +12,13 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 
 */
 function flatten(){
-	// var x= /\,/gi
-	// return Array.from(arguments).join("").replace(x,'').split("");
-	var x= /\,\"\]\[/gi
-	console.log(arguments)
-var temp= Array.from(arguments);
-		console.log(temp)
-				console.log(JSON.stringify(temp))
-
-	return JSON.stringify(temp).rplace(x,'').split("");
+	//O(n)
+	//semi colon as regular expression
+	var x= /\,/gi
+	//transfer arguments object into array join and replace all semi-colon and split it again into array
+	return Array.from(arguments).join("").replace(x,'').split("");
+	
+	//altrentaive solution using stringify
+	// var leftBrac= /\[/gi, rightBrac= /\]/gi, qoat= /\"/gi, semi = /\,/gi;
+	// return JSON.stringify(Array.from(arguments)).replace(leftBrac,'').replace(rightBrac, '').replace(qoat,'').replace(semi,'');
 }
