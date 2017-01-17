@@ -34,17 +34,24 @@ rotate(data, 11)    // => [5, 1, 2, 3, 4]
 rotate(data, 12478) // => [3, 4, 5, 1, 2]
 
 */
+//O(1);
 function rotate(array, steps){
+	//stoping condition
 	if(steps ===0 )
 		return array;
 	else{
+		//else keep calling rotate
 		if(steps>0){
+			//if steps is positive shift to the right
 		array = Array.from(array);
 		array.unshift(array.pop());
+		//call rotate again
 		return rotate(array, --steps);
 	} else if(steps<0){
+		//if steps is positive shift to the left
 		array = Array.from(array);
 		array.push(array.shift());
+		//call rotate again
 		return rotate(array, ++steps);
 	}
 
@@ -52,10 +59,6 @@ function rotate(array, steps){
 }
 
 /*
-	temp =[]
-	while(steps>0){
-		temp.push(array[array.length-1])
-		array.splice(0, array.length-1);
 Problem 2 (Advanced)
 You have to create a function that takes a positive integer number and returns the 
 next bigger number formed by the same digits:
@@ -72,6 +75,14 @@ nextBigger(111)==-1
 nextBigger(531)==-1
 */
 
+//O(1)
 function nextBigger(num){
-
+	var temp= num.toString().split("");
+	if(Number(temp[temp.length-2])< Number(temp[temp.length-1])){
+		var holder= temp[temp.length-2];
+		temp[temp.length-2] = temp[temp.length-1]
+		temp[temp.length-1] = holder;
+		} else
+		return -1
+	return Number(temp.join(''));
 }
