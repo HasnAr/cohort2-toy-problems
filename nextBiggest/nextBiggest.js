@@ -19,7 +19,7 @@ rotate([true, true, false], 1) // => [false, true, true]
 
 var data = [1, 2, 3, 4, 5];
 rotate(data, 1) // => [5, 1, 2, 3, 4]
-rotate(data, 2) // => [4, 5, 1, 2, 3] 5 4 
+rotate(data, 2) // => [4, 5, 1, 2, 3] 
 rotate(data, 5) // => [1, 2, 3, 4, 5] 
 rotate(data, 0) // => [1, 2, 3, 4, 5]
 rotate(data, -1) // => [2, 3, 4, 5, 1]
@@ -35,10 +35,27 @@ rotate(data, 12478) // => [3, 4, 5, 1, 2]
 
 */
 function rotate(array, steps){
+	if(steps ===0 )
+		return array;
+	else{
+		if(steps>0){
+		array = Array.from(array);
+		array.unshift(array.pop());
+		return rotate(array, --steps);
+	} else if(steps<0){
+		array = Array.from(array);
+		array.push(array.shift());
+		return rotate(array, ++steps);
+	}
 
+	}
 }
 
 /*
+	temp =[]
+	while(steps>0){
+		temp.push(array[array.length-1])
+		array.splice(0, array.length-1);
 Problem 2 (Advanced)
 You have to create a function that takes a positive integer number and returns the 
 next bigger number formed by the same digits:
