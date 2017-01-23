@@ -13,8 +13,11 @@ Example:
 arr = [2,4,3,6,8,2,3,4,8];
 singleNumber(arr);//should return 6 because it only appear once
 */
+// o(n^2)
 function singleNumber(arr){
-
+	return arr.filter(function(value){
+		var temp= new RegExp(value+'','g')
+		return arr.join('').match(temp).length===1})
 }
 
 /*
@@ -31,8 +34,12 @@ var nums = [2, 7, 11, 15], target = 9,
 twoSum(nums,9); //should return [0,1] because nums[0] + nums[1] = 2 + 7 = 9;
 */
 
+o(n^2)
 function twoSum(nums, target){
-
+	if(target === nums.reduce(function(a,b){ return a+b}))
+		return Object.keys(nums)
+	else
+		return twoSum(nums.slice(0, nums.length-1), target);
 }
 
 /*
@@ -45,7 +52,12 @@ excluding [11,22,33,44,55,66,77,88,99] because they don't have unique digits)
 
 countAllNumbers(2); //should return 91 because there are 91 numbers that have unique digits
 */
-
+o(n)
 function countAllNumbers(n){
-
+	var count=0;
+	for(var i=0; i< Math.pow(10,n); i++){
+		if(Number(i.toString().split("")[0]) !== Number(i.toString().split("")[1]))
+			count++
+	}
+	return count;
 };
