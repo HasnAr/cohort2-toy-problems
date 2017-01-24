@@ -38,6 +38,21 @@
  */
 
 var rotateMatrix =function (matrix) {
-	
+	var rotatedMatrix=[];
+	for(var i=matrix.length-1;i>-1;i--){
+		var tempArray=[];
+		for(var j=0;j<matrix.length; j++){
+			tempArray.unshift(matrix[i][j])
+		}
+		rotatedMatrix.unshift(tempArray);
+	}
+	console.log(rotatedMatrix)
+	return rotatedMatrix;
+}
+
+
+
+
+
 }
 ///////////////////
