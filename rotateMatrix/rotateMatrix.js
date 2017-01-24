@@ -36,23 +36,29 @@
  *  - Make your function operate on rectangular matrices (MxN rather than NxN).
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
+//, clockwise
+ var rotateMatrix =function (matrix, clockwise) {
+ 	var rotatedMatrix=[];
+ 	if(clockwise === -1){
 
-var rotateMatrix =function (matrix) {
-	var rotatedMatrix=[];
-	for(var i=matrix.length-1;i>-1;i--){
-		var tempArray=[];
-		for(var j=0;j<matrix.length; j++){
-			tempArray.unshift(matrix[i][j])
-		}
-		rotatedMatrix.unshift(tempArray);
-	}
-	console.log(rotatedMatrix)
-	return rotatedMatrix;
-}
+ 	for(var j=0;j<matrix.length; j++){
+ 		var tempArray=[];
+ 		for(var i=matrix.length-1;i>-1;i--){
+ 			tempArray.unshift(matrix[i][j])
+ 		}
+ 		rotatedMatrix.unshift(tempArray);
+ 	}
+ 	} else if(clockwise === 1){
+ 		for(var j=0;j<matrix.length; j++){
+ 		var tempArray=[];
+ 		for(var i=matrix.length-1;i>-1;i--){
+ 			tempArray.push(matrix[i][j])
+ 		}
+ 		rotatedMatrix.push(tempArray);
+ 	}
+ 	}
+ 	return rotatedMatrix;
+ }
 
 
 
-
-
-}
-///////////////////
