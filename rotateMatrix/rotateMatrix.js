@@ -36,13 +36,17 @@
  *  - Make your function operate on rectangular matrices (MxN rather than NxN).
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
-//, clockwise
+
+ //o(n*n)
  var rotateMatrix =function (matrix, clockwise) {
  	var rotatedMatrix=[];
+ 	//check if clockwies === -1 or === 1
  	if(clockwise === -1){
-
+ 	//iterate over n
  	for(var j=0;j<matrix.length; j++){
+ 		//a temporary array 
  		var tempArray=[];
+ 		//iterate over n
  		for(var i=matrix.length-1;i>-1;i--){
  			tempArray.unshift(matrix[i][j])
  		}
