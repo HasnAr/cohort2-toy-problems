@@ -26,6 +26,7 @@ More examples:
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]) => ["WEST"]
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"]) => [] //don't need to move at all
 */
+<<<<<<< HEAD
 //o(n^2)
 var dirReduc = function(directions){
 	// create RegExp for each case
@@ -43,5 +44,11 @@ var dirReduc = function(directions){
 	temp = temp.replace(westEast, '');
 }
 	return temp;
+=======
+
+var dirReduc = function(directions){
+	
+	return directions;
+>>>>>>> d2130e14cb0ab2ec81404accbb5aee359f2349a4
 };
 
