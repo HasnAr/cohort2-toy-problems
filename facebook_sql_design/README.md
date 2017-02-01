@@ -1,6 +1,6 @@
 ## Facebook SQL design
 
-* [ ] Create relationship between below tables in http://ondras.zarovi.cz/sql/demo/ and upload screenshot in the current folder.
+* [ 2] Create relationship between below tables in http://ondras.zarovi.cz/sql/demo/ and upload screenshot in the current folder.
 
 **Tables:** User, Like, Post, Comment
 
@@ -9,4 +9,4 @@ Post has many Likes, many Comments and one User
 Comment has one User
 Like has one User and one Post
 
-* [ ] Optional question for your brain: User to User has Friendship.
+* [ 2] Optional question for your brain: User to User has Friendship.
