@@ -4,7 +4,11 @@
  * a prime number, false if it's not.
  */
 var primeTester = function(n) {
-
+	for(var i=n-1;i>1;i--){
+		if(n%i)
+			return false
+	}
+	return true;
 }
 
  /* Extra credit: Write a function that generates a list of all prime numbers
