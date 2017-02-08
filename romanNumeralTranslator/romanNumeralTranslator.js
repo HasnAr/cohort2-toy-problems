@@ -26,4 +26,9 @@ var translateRomanNumeral = function(romanNumeral){
 	  D: 500,
 	  M: 1000
 	};
+
+
+	return romanNumeral.split("").reduce(function(a, b){
+		return  a+ DIGIT_VALUES[b];
+	},0)
 }

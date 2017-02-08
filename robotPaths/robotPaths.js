@@ -39,10 +39,10 @@ var robotPaths = function(myBoard) {
   for (var i = 0; i < myBoard.length; i++) {
 
     for (var j = 0; j < myBoard.length; j++) {
-      if(myBoard.hasBeenVisited(i, j)){
+      if(!myBoard.hasBeenVisited(i, j)){
         myBoard.togglePiece(i, j)
         bx++;
-        return robotPaths(myBoard)
+        return robotPaths(myBoard)+bx;
       }
 
     }
