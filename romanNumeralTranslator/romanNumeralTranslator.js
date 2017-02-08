@@ -27,8 +27,16 @@ var translateRomanNumeral = function(romanNumeral){
 	  M: 1000
 	};
 
-
+	//in case they small numeral appers before large one
+	if(romanNumeral.match(/[IVXLCDM]/g)){
+		//perform subtract operation
+	  return romanNumeral.split("").reduce(function(a, b){
+	 	return   DIGIT_VALUES[b]-a;
+  	  },0)
+	}
+	
+	//normal cases where large numeral appears before small one
 	return romanNumeral.split("").reduce(function(a, b){
-		return  a+ DIGIT_VALUES[b];
+      return  a+ DIGIT_VALUES[b];
 	},0)
 }
