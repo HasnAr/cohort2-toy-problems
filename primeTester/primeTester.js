@@ -4,11 +4,15 @@
  * a prime number, false if it's not.
  */
 var primeTester = function(n) {
+<<<<<<< HEAD
 	for(var i=n-1;i>1;i--){
 		if(n%i)
 			return false
 	}
 	return true;
+=======
+
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
 }
 
  /* Extra credit: Write a function that generates a list of all prime numbers

@@ -4,9 +4,20 @@
  * array will contain objects or arrays as elements within them.
  *
  *
+<<<<<<< HEAD
  *
  * NOTE: You should disregard duplicates in the set.
  *
+=======
+ * var a = ['commit','push']
+ * a.isSubsetOf(['commit','rebase','push','blame']) // true
+ *
+ * NOTE: You should disregard duplicates in the set.
+ *
+ * var b = ['merge','reset','reset']
+ *
+ * b.isSubsetOf(['reset','merge','add','commit']) // true
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
  *
  * See http://en.wikipedia.org/wiki/Subset for more on the definition of a
  * subset.
@@ -18,6 +29,7 @@
 */
 
 Array.prototype.isSubsetOf = function (arr) {
+<<<<<<< HEAD
 	return _.filter(this, function(value, index){
 		return arr.includes(value);
 	}).length === this.length;
@@ -26,3 +38,7 @@ Array.prototype.isSubsetOf = function (arr) {
  a.isSubsetOf(['commit','rebase','push','blame']) // true
  var b = ['merge','reset','reset','what']
  b.isSubsetOf(['reset','merge','add','commit']) // true
+=======
+
+}
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
