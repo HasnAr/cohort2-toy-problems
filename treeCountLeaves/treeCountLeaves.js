@@ -39,7 +39,15 @@ var Tree = function(value){
 
 
 
-Tree.prototype.countLeaves = function () {
+Tree.prototype.countLeaves = function (counter=0) {
+  if(this.children.length===0){
+       return 1;
+  } else{
+    for(var i=0; i<this.children.length; i++){
+      counter=  counter + this.children[i].countLeaves(counter);
+    }
+    return counter;
+  }
 }
 
 /**
@@ -51,7 +59,7 @@ Tree.prototype.countLeaves = function () {
   * (wrap values in Tree nodes if they're not already)
   */
 Tree.prototype.addChild = function(child){
-  
+  this.children.push(child);
 };
 
 /**
