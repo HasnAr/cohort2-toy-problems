@@ -12,17 +12,21 @@ See example usage to understand what arguments are passed to the callback.
 */
 
 Array.prototype.map = function(callback){
-
+	var tempArray=[];
+	for(var i=0; i<this.length; i++){
+		tempArray.push(callback(this[i], i,this));
+	}
+	return tempArray;
 }
 
-/*
-Example usage:
+
+//Example usage:
 var transform = function(element,index,array){
   return array[index] + index + element;
 };
 
 ["a","b","c"].map(transform); //should return ['a0a','b1b','c2c'];
-*/
+
 
 
 /*
@@ -39,7 +43,7 @@ Please see example usage to understand what should be passed to the callback.
 */
 
 var asyncSum = function(a,b,callback){
-
+	setTimeout(callback.bind(this, a+b) ,50000)
 };
 
 /*
@@ -66,6 +70,7 @@ Problem 3 (ADVANCED):
 What kind of candy do you like?
 Your answer: 
 
+marshmlo :)
 */
 
 
