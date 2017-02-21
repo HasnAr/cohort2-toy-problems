@@ -51,9 +51,19 @@ var x = [[0,0,0,0,0,0,1,2,3,0],
 
 
 
+var y=[ [ 8, 02 ,22, 97 ,38, 15 ],
+ [49 ,49 ,99, 40 ,17 ,81 ],
+ [81, 49 ,31, 73 ,55 ,79 ],
+ [52, 70 ,95, 23 ,04 ,60 ],
+ [22, 31 ,16, 71 ,51 ,67 ],
+ [24, 47 ,32, 60 ,99 ,03 ],
+ [32, 98 ,81, 28 ,64 ,23 ]];
+
+
 var largestProductOfFour = function(array) {
 	//return the max of up, down, left, right and dio
 	//if(this.up() )
+	return Math.max(up(array), down(array), right(array), left(array))
 };
 
 
@@ -109,8 +119,16 @@ for (var i = 0; i < array.length; i++) {
 
 
 
-largestProductOfFour.prototype.dio =function(array){
-
+dio =function(array){
+	var temp=0;
+for (var i = 0; i < array.length-3; i++) {
+  	for(var j=0; j<array.length-3 ; j++){
+  		var tempRes=array[i][j]+ array[i+1][j+1]+array[i+2][j+2]+array[i+3][j+3];
+  		if(tempRes>temp)
+  			temp= tempRes;
+  	}
+  }
+  return temp; 
 }
 
 
